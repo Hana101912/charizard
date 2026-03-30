@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+<div id="resultado"></div>
+ <script>
+var x, y;
+var j;
+ function sumar() 
+{
+ x=document.getElementById ("num1").value; 
+y=document.getElementById("num2").value; 
+
+
+x = parseInt(x) 
+y = parseInt(y);
+ document.getElementById("resultado").innerHTML= x+y;
+ }
+ </script>
+ </body>
+ </html> 
