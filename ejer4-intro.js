@@ -19,3 +19,17 @@ coinciden, se muestra un mensaje al usuario diciendole que la letra que ha indic
 correcta. En otro caso, se muestra un mensaje indicando que el numero y la letra de DNI
 son correctos.*/
 var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K','E', 'T'];
+function ejercicio4(){
+var dni= prompt("Escriba su DNI: ")
+
+if(dni = null ||isNaN(dni)|| dni== ""|| dni<0 || dni>99999999)
+{
+    console.log("El numero proporcionado no es valido");
+}
+ 
+else{
+    var resto = dni % 23;
+    console.log("Resto: ", resto);
+    console.log("Letras: ", letras);
+}
+}
