@@ -7,6 +7,15 @@ function ejercicio10(){
 
     for(i=0; i<36000; i++)
     {
-        let primerdado
-        let segundodado = Math.floor
-}}
+        let dado1 = Math.floor(Math.random()+ 6) +1;
+        let dado2 = Math.floor(Math.random()+ 6) +1;
+        let suma = dado1 + dado2;
+        arr[suma]=arr[suma]+1;
+}
+console.log(arr);
+
+for(let j=2; j<13; j++)
+    {
+        console.log("el numero" + j +"salio: "+ arr(j)+ "veces en total.");
+    }
+}
