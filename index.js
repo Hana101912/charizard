@@ -1,5 +1,5 @@
 function ejercicio1(){
-var meses = [
+let meses = [
   "Enero", 
   "Febrero", 
   "Marzo", 
@@ -24,14 +24,14 @@ console.log("todos los meses del año son:  " + meses);
 
 
 function ejercicio2(){
-var valores = [true, 5, false, "hola", "adios", 2];
+let valores = [true, 5, false, "hola", "adios", 2];
 
-var suma = valores[1] > valores[5];
-var resta = valores[1] > valores[5];
-var multiplicacion = valores[1] > valores[5];
-var division = valores[1] > valores[5];
-var potencia = valores[1] > valores[5];
-var mayor = valores[4] > valores[3];  
+let suma = valores[1] > valores[5];
+let resta = valores[1] > valores[5];
+let multiplicacion = valores[1] > valores[5];
+let division = valores[1] > valores[5];
+let potencia = valores[1] > valores[5];
+let mayor = valores[4] > valores[3];  
 if (valores[3],length<valores[4],length) {
   console.log("la afirmacion es: ", valores[2]);
 } 
@@ -74,8 +74,8 @@ console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igua
 
 
 function ejercicio4(){
-var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K','E', 'T'];
-var dni= prompt("Escriba su DNI: ")
+let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K','E', 'T'];
+let dni= prompt("Escriba su DNI: ")
 
 if(dni = null ||isNaN(dni)|| dni== ""|| dni<0 || dni>99999999)
 {
@@ -83,7 +83,7 @@ if(dni = null ||isNaN(dni)|| dni== ""|| dni<0 || dni>99999999)
 }
  
 else{
-    var resto = dni % 23;
+    let resto = dni % 23;
     console.log("Resto: ", resto);
     console.log("Letras: ", letras);
 }
@@ -94,15 +94,15 @@ else{
 
 
 function ejercicio5(){
-var num = prompt("ingrese un numero entero")
+let num = prompt("ingrese un numero entero")
 // Número del cual queremos calcular el factorial
-var numero = 5;
+let numero = 5;
 
 // Variable para almacenar el resultado
-var factorial = 1;
+let factorial = 1;
 
 // Bucle for para calcular el factorial
-for (var i = 1; i <= numero; i++) {
+for (let i = 1; i <= numero; i++) {
   factorial *= i; // equivalente a factorial = factorial * i
 }
 console.log("el factorial de: "+ numero +"es:"+ factorial)
@@ -113,7 +113,7 @@ console.log("el factorial de: "+ numero +"es:"+ factorial)
 
 
 
-function Ejercicio6(){
+function ejercicio6(){
     var num = prompt("ingrese un numero");
 
     if (isNaN(num)||num == null||num=="")
@@ -137,4 +137,102 @@ function Ejercicio6(){
 
 
 
-function Ejercicio7(){}
+function ejercicio7(){
+let text = prompt("Ingrese una palabra: ");
+if(text == null || text == "" || !isNaN (text))
+    {
+    console.log("mal, algo esta mal");
+    }
+
+else if(text === text.toUpperCase()){
+    console.log("el texto ingresado es: ", text);
+    console.log("el texto esta conformado por mayusculas.");
+}
+else if(text == text.toLowerCase())
+{
+    console.log("el texto ingresado es: ", text);
+    console.log("el texto esta conformado por minusculas.");
+}
+else{
+    console.log("el texto ingresado es: ", text);
+    console.log("el texto no tiene ni mayusculas ni minusculas.");
+}
+}
+
+
+
+
+
+function ejercicio8()
+{
+    let texto = prompt("Ingrese un texto: ");
+    let str = texto.replaceAll("","").toLocaleLowerCase();
+    let arrStr = str.split("").reverse().join("");
+
+    if(str == arrStr)
+        {
+            console.log("El texto ingresado es: ", texto);
+            console.log("El texto ingresado es un palindromo");
+    }
+    else{
+         console.log("El texto ingresado es: ", texto);
+            console.log("El texto ingresado no es un palindromo");
+    }
+}
+
+
+
+
+
+function ejercicio9(){
+    let p1 = new Estudiante("Juan", 30, "masculino", "Matematicas", "1A");
+    console.log(p1.registrar());
+    p1.obtDetalles();
+}
+    function Persona(nombre, edad, genero) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+    }
+    Persona.prototype.obtDetalles = function(){
+        console.log(`Nombre: ${this.nombre}, Edad:${this.edad}, Género: ${this.nombre}`);
+    }
+    function Estudiante(nombre, edad, genero, curso, grupo) {
+        Persona.call(this, nombre, edad, genero);
+        this.curso = curso;
+        this.grupo = grupo;
+    }
+    Estudiante.prototype = Object.create(Persona.prototype);
+    Estudiante.prototype.contructor = Estudiante;
+    Estudiante.prototype.registrar = function(){
+        console.log(`${this.nombre}, a sido registrado en el curso${this.curso}, Grupo ${this.grupo}`); 
+    }
+    function Profesor(nombre, edad, genero, curso, grupo) {
+        Profesor.call(this, nombre, edad, genero, asignatura, nivel);
+        this.asignatura == asignatura;
+        this.nivel == nivel;
+    }
+    Profesor.prototype.obtDetalles = function(){
+        console.log(`Asignatura: ${this.asignatura}, nivel:${this.nivel}`);
+    }
+
+
+
+
+
+function ejercicio10(){
+    let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for(i=0; i<36000; i++)
+    {
+        let dado1 = Math.floor(Math.random() * 6) +1;
+        let dado2 = Math.floor(Math.random() * 6) +1;
+        let suma = dado1 + dado2;
+        arr[suma]=arr[suma]+1;
+}
+
+for(let j=2; j<13; j++)
+    {
+        console.log("el numero", j, "salio: ", arr[j], "veces en total.");
+    }
+}
